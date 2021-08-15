@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% block title %}
+{{book}} | American Standard Version | ASV Bible
+{% endblock %}
+
+{% block content %}
+
+<body>
+    <div class="sub-body">
+        <nav class="black-background">
+            <a href="\">Home </a>
+            <a href="\book">Books</a>
+            <a href="\preface">Preface</a>
+        </nav>
+        <main>
+            <a href="\book">
+                <span id="arrow-up" class="material-icons centered">expand_less</span>
+            </a>
+            <div class="contains-arrow-container">
+                <div class="arrow-container">
+                    {% if book_number > 1 %}
+                    <a href="{{url_for('get_chapters', book_url=book_names_url[book_number-2])}}">
+                        <span id="arrow-backward" class="material-icons">arrow_back_ios</span>
+                    </a>
+                    {% else %}
+                    <span id="arrow-backward" class="material-icons" style="visibility: hidden;">arrow_back_ios</span>
+                    {% endif %}
+                    <h1 class="cursive centered">{{book}}</h1>
+                    {% if book_number < 66 %} <a
+                        href="{{url_for('get_chapters', book_url=book_names_url[book_number])}}">
+                        <span id="arrow-forward" class="material-icons">arrow_forward_ios</span>
+                        </a>
+                        {% else %}
+                        <a href="#" style="visibility: hidden;">
+                            <span id="arrow-forward" class="material-icons">arrow_forward_ios</span>
+                        </a>
+                        {% endif %}
+                </div>
+            </div>
+            <div class="chapter-container">
+                {% for i in range(1, num_of_chapters + 1) %}
+                <a class="items" href="{{url_for('get_chapter_text', book_url=book_url, chapter=i)}}">{{i}}</a>
+                {% endfor %}
+            </div>
+        </main>
+    </div>
+</body>
+
+{% endblock %}

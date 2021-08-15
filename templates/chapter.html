@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+{% block title %}
+{{book}} {{chapter}}:1-{{num_of_verses}} | American Standard Version | ASV Bible
+{% endblock %}
+
+{% block content %}
+
+<body>
+    <div class="sub-body">
+        <nav class="black-background">
+            <a href="\">Home </a>
+            <a href="\book">Books</a>
+            <a href="\preface">Preface</a>
+        </nav>
+        <main class="sub-main">
+            <a href="{{url_for('get_chapters', book_url=book_url)}}">
+                <span id="arrow-up" class="material-icons centered">expand_less</span>
+            </a>
+            <div class="contains-arrow-container">
+                <div class="arrow-container">
+                    {% if chapter > 1 %}
+                    <a href="{{url_for('get_chapter_text', book_url=book_url, chapter=chapter-1)}}">
+                        <span id="arrow-backward" class="material-icons">arrow_back_ios</span>
+                    </a>
+                    {% else %}
+                    <span id="arrow-backward" class="material-icons" style="visibility: hidden;">arrow_back_ios</span>
+                    {% endif %}
+                    <h1 class="centered cursive">{{book}} {{chapter}}</h1>
+                    {% if chapter < num_of_chapters %} <a
+                        href="{{url_for('get_chapter_text', book_url=book_url, chapter=chapter+1)}}">
+                        <span id="arrow-forward" class="material-icons">arrow_forward_ios</span>
+                        </a>
+                        {% else %}
+                        <span id="arrow-forward" class="material-icons"
+                            style="visibility: hidden;">arrow_forward_ios</span>
+                        {% endif %}
+                </div>
+            </div>
+            {% for row in text_row %}
+            <p class="no-margin"><span class="green-text">{{row[1]}}</span>&nbsp;&nbsp;&nbsp;{{row[0]}}</p>
+            {% endfor %}
+            <br>
+            <div class="contains-arrow-container">
+                <div class="arrow-container">
+                    {% if chapter > 1 %}
+                    <a href="{{url_for('get_chapter_text', book_url=book_url, chapter=chapter-1)}}">
+                        <span id="arrow-backward" class="material-icons">arrow_back_ios</span>
+                    </a>
+                    {% else %}
+                    <span id="arrow-backward" class="material-icons" style="visibility: hidden;">arrow_back_ios</span>
+                    {% endif %}
+                    {% if chapter < num_of_chapters %} <a
+                        href="{{url_for('get_chapter_text', book_url=book_url, chapter=chapter+1)}}">
+                        <span id="arrow-forward" class="material-icons">arrow_forward_ios</span>
+                        </a>
+                        {% else %}
+                        <span id="arrow-forward" class="material-icons"
+                            style="visibility: hidden;">arrow_forward_ios</span>
+                        {% endif %}
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+{% endblock %}

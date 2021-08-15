@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+{% block title %}
+American Standard Version | ASV Bible | Online Bible
+{% endblock %}
+
+{% block content %}
+
+<body>
+    <div class="sub-body">
+        <nav class="black-background">
+            <a href="\">Home </a>
+            <a href="\book">Books</a>
+            <a href="\preface">Preface</a>
+        </nav>
+        <heading class="centered">
+            <div class="title-container">
+                <h1 id="title-1" class="main-title centered">Holy Bible</h1>
+                <div class="line black-background"></div>
+                <div class="line2 black-background"></div>
+                <div class="spacer"></div>
+            </div>
+            <div class="title-container2">
+                <h2 id="title-2" class="main-title centered">American Standard Version</h2>
+                <h3 id="title-3" class="main-title centered">1901</h3>
+                <a href="{{url_for('books')}}" class="cta-btn">Read</a>
+            </div>
+        </heading>
+        <hr>
+        <main class="sub-main">
+            <div id="preface-body" class="align-left">
+                <p><strong>Question: What makes the American Standard Version different from most translations of the
+                        Bible?</strong></p>
+                <p><strong>Answer: It restores God's name to its rightful place in the scriptures.</strong></p>
+                <p>From the American Revision Committee...</p>
+                <em>
+                    <p>
+                        The change first recommended in the Appendix - that which substitutes "Jehovah" for "LORD" and
+                        "GOD" - is one which will be unwelcome to many...
+                    </p>
+                    <p>
+                        But the American Revisers, after a careful consideration were brought to the unanimous
+                        conviction
+                        that a Jewish superstition, which regarded the Divine Name as too sacred to be uttered, ought no
+                        longer to dominate in the English or any other version of the Old Testament...
+                    </p>
+                    <p>
+                        This Memorial Name...designates God as the personal God, as the covenant God, the God of
+                        revelation,
+                        the Deliverer, the Friend of his people...the ever living Helper of those who are in trouble.
+                        This
+                        personal name, with its wealth of sacred associations, is now restored to the place in the
+                        sacred
+                        text to which it has an unquestionable claim.
+                    </p>
+                </em>
+            </div>
+        </main>
+        <br>
+        <footer>
+            <span class="green-text">The American Standard Version is Public Domain</span>
+            <span>2021 Mark Gauffin</span>
+        </footer>
+    </div>
+</body>
+
+{% endblock %}
