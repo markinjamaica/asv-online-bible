@@ -11,7 +11,8 @@ from flask import Flask, render_template, request, redirect
 app = Flask(__name__)
 
 #new change####
-app.config['SQLALCHEMY_DATABASE_URL'] = environ.get('DATABASE_URL') or 'asv.sqlite'
+app.config['SQLALCHEMY_DATABASE_URL'] = environ.get(
+    'DATABASE_URL') or 'asv.sqlite'
 
 
 # List of Bible book abbreviations
@@ -68,7 +69,12 @@ def get_chapters(book_url):
     book = book_names[book_number - 1]
 
     # Define connection and cursor (cursor is used to interact with the database)
-    connection = sqlite3.connect("/home/markgauffin/asv-online-bible/asv.sqlite")
+    try:
+        connection = sqlite3.connect(
+            "/home/markgauffin/asv-online-bible/asv.sqlite")
+    except sqlite3.OperationalError:
+        connection = sqlite3.connect(
+            "asv.sqlite")
     cursor = connection.cursor()
 
     # SQL query to get number of chapters in selected book
@@ -91,7 +97,12 @@ def get_chapter_text(book_url, chapter):
     book = book_names[int(book_number) - 1]
 
     # Define connection and cursor (cursor is used to interact with the database)
-    connection = sqlite3.connect("/home/markgauffin/asv-online-bible/asv.sqlite")
+    try:
+        connection = sqlite3.connect(
+            "/home/markgauffin/asv-online-bible/asv.sqlite")
+    except sqlite3.OperationalError:
+        connection = sqlite3.connect(
+            "asv.sqlite")
     cursor = connection.cursor()
 
     # SQL query to get number of chapters in selected book
