@@ -50,6 +50,14 @@ footer span {
     padding: 10px;
 }
 
+/******* Get rid of blue outline on mobile tap  *********/
+
+button,
+div,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
 /******* index.html specific **********/
 
 .main-title {
@@ -70,7 +78,7 @@ footer span {
 
 #title-1 {
     font-size: 4rem;
-    margin: .5rem auto .5rem auto;
+    margin: 0.5rem auto 0.5rem auto;
 }
 
 .line {
@@ -85,13 +93,13 @@ footer span {
 
 #title-2 {
     font-size: 3rem;
-    margin: 0 auto .5rem auto;
+    margin: 0 auto 0.5rem auto;
     color: var(--green, darkgreen);
 }
 
 #title-3 {
     font-size: 2rem;
-    margin: .5rem auto 2rem auto;
+    margin: 0.5rem auto 2rem auto;
 }
 
 .cta-btn {
@@ -124,7 +132,8 @@ footer span {
     min-height: 100vh;
 }
 
-.container, .chapter-container {
+.container,
+.chapter-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
     gap: 2.5px;
