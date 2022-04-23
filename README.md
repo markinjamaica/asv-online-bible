@@ -1,17 +1,11 @@
 # American Standard Version Online Bible
-#### Description: It is an online Bible.
-#### Files:
-* style.css - stylesheet
-* layout.html - basic html page layout
-* index.html - homepage
-* books.html - page where you can select from the different Bible books
-* book.html - page where you can select a chapter from a Bible book
-* chapter.html - page where you can read the chapter text
-* preface.html - page where you can read the preface
-* app.py - backend
-* asv.sqlite - Bible sql database
 
+This project is an easy to navigate online Bible using the American Standard Version (ASV).
 
+![ASV Online Bible](https://media.giphy.com/media/WhpYrx14JNE1TIg4Ds/giphy.gif)
 
+## Technologies Used
 
-
+-   Python version 3.9.5
+-   Flask version 2.0.0
+-   SQLite 3 database
