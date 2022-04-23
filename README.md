@@ -1,6 +1,6 @@
 # American Standard Version Online Bible
 
-This project is an easy to navigate online Bible using the American Standard Version (ASV).
+An easy to navigate online Bible.
 
 ![ASV Online Bible](https://media.giphy.com/media/WhpYrx14JNE1TIg4Ds/giphy.gif)
 
