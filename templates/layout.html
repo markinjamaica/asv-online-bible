@@ -1,19 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, width=device-width, height=device-height">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
-    <title>{% block title %}{% endblock %}</title>
-</head>
-{% block content %}
-{% endblock %}
-
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="initial-scale=1, width=device-width, height=device-height"
+        />
+        <link
+            rel="shortcut icon"
+            href="{{ url_for('static', filename='favicon.ico') }}"
+        />
+        <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename='style.css') }}"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap"
+            rel="stylesheet"
+        />
+        <title>{% block title %}{% endblock %}</title>
+    </head>
+    {% block content %} {% endblock %}
 </html>
